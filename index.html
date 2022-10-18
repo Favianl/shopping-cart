@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shopping Cart</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Electronic Store</h1>
+        <div class="cart-icon">
+          <img class="cart-icon__img" src="img/shopping-cart-icon.svg" />
+          <p class="cart-icon__number">0</p>
+        </div>
+      </div>
+    </header>
+    <div class="notice notice-limit">
+      The maximum quantity of <span></span> is <span></span>.
+    </div>
+    <div class="notice notice-add">
+      <span></span> has been added, <span></span> units.
+    </div>
+    <section class="store">
+      <button class="reset-stock">Reset Stock</button>
+      <div class="store__content">
+        <template class="template__product">
+          <article class="product">
+            <section class="product__img">
+              <img src="" alt="" />
+            </section>
+            <section class="product__info">
+              <p class="product__name"></p>
+              <p class="product__description"></p>
+            </section>
+            <section class="product__selection">
+              <div class="product__quantity">
+                <div class="product__quantity--wrap">
+                  <button class="product__decrease-btn">&#8722;</button>
+                  <input
+                    class="product__input"
+                    type="number"
+                    value="1"
+                    readonly
+                  />
+                  <button class="product__increase-btn">&#43;</button>
+                </div>
+                <p>US$ <span class="product__price"></span></p>
+              </div>
+
+              <p class="product__stock">
+                <span class="product__available"></span> Units in Stock
+              </p>
+              <p class="product__sold-out">Sold Out</p>
+              <button class="product__add-btn">Add to Cart</button>
+            </section>
+          </article>
+        </template>
+      </div>
+    </section>
+    <section class="cart">
+      <div class="cart__wrap">
+        <p class="cart__empty">Your cart is empty!</p>
+        <table class="cart__content">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <template class="template__cart-item">
+              <tr class="cart-item">
+                <td><img src="" /></td>
+                <td class="cart-item__name"></td>
+                <td class="cart-item__quantity">
+                  <button class="cart-item__decrease-btn">&#8722;</button>
+                  <input
+                    class="cart-item__input"
+                    type="number"
+                    value="1"
+                    readonly
+                  />
+                  <button class="cart-item__increase-btn">&#43;</button>
+                </td>
+                <td>US$ <span class="cart-item__subtotal"></span></td>
+                <td><button class="cart-item__remove-btn">&#10006;</button></td>
+              </tr>
+            </template>
+          </tbody>
+          <tfoot>
+            <tr class="cart__total">
+              <td></td>
+              <td>Total</td>
+              <td class="cart__total-quantity">0</td>
+              <td>US$ <span class="cart__total-value">0.00</span></td>
+              <td>
+                <button class="cart__clean-btn" disabled>Clean</button>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+        <img class="cart__loader" src="img/oval.svg" alt="loader" />
+        <button class="cart__buy-btn" disabled>Buy Now</button>
+        <button class="cart__back-btn">Back</button>
+      </div>
+    </section>
+    <section class="purchase">
+      <div class="purchase__content">
+        <p>&#10003;</p>
+        <p>Thank you for the purchase!</p>
+        <p>Your order has been received.</p>
+        <table class="purchase__summary">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price Unit</th>
+              <th>Qty</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody class="purchase__list"></tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Tax</td>
+              <td></td>
+              <td>US$ <span>00.00</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Shipping</td>
+              <td></td>
+              <td>US$ <span>00.00</span></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Total Amount</td>
+              <td></td>
+              <td>US$ <span class="purchase__total"></span></td>
+            </tr>
+          </tfoot>
+        </table>
+        <p>Very soon your order will be packed and shipped to you.</p>
+        <button class="purchase__back-btn" disabled>Back</button>
+      </div>
+    </section>
+
+    <script src="script/app.js" type="module"></script>
+  </body>
+</html>
